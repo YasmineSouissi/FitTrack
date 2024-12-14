@@ -1,0 +1,92 @@
+﻿@model Projet.Models.NewPageModel
+
+@{
+    ViewData["Title"] = "Ajouter un article";
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Articles</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header", Model.User) <!-- Passez l'utilisateur actuel comme modèle -->
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center">
+                <div class="card" style="width: 100%; max-width: 800px; border-radius: 15px; box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);">
+                    <div class="card-header bg-light text-center" style="border-radius: 15px 15px 0 0; padding: 20px;">
+                        <h2 style="color: #D268CC;">Rédiger un nouvel article</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/Articles/Add">
+                            <!-- Titre -->
+                            <div class="mb-4">
+                                <label for="title" class="form-label">Titre de l'article :</label>
+                                <input type="text" id="title" name="Model.Article.Title" class="form-control" required />
+                            </div>
+                            <!-- Auteur -->
+                            <div class="mb-4">
+                                <label for="author" class="form-label">Auteur :</label>
+                                <input type="text" id="author" name="Model.Article.Author" class="form-control" required />
+                            </div>
+                            <!-- URL de l'image -->
+                            <div class="mb-4">
+                                <label for="imageUrl" class="form-label">URL de l'image :</label>
+                                <input type="url" id="imageUrl" name="Model.Article.ImageUrl" class="form-control" required />
+                            </div>
+                            <!-- Contenu -->
+                            <div class="mb-4">
+                                <label for="content" class="form-label">Contenu :</label>
+                                <textarea id="content" name="Model.Article.Content" class="form-control" rows="10" required></textarea>
+                            </div>
+                            <!-- Bouton de soumission -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Publier l'article</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 80px"></div>
+    </main>
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>MyFitnessApp</h5>
+                    <p>Obtenez les outils pour perdre du poids avec succès - et le maintenir.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">À propos de nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contactez-nous</h5>
+                    <p>Email : info@myfitnessapp.com</p>
+                    <p>Téléphone : +000 000 000 000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

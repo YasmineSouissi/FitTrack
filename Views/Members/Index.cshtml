@@ -1,0 +1,118 @@
+﻿@model Projet.Models.Members
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Membres</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header", Model.User) <!-- Passez l'utilisateur actuel comme modèle -->
+    </header>
+
+    <main>
+        <div class="container py-5">
+            <h1 class="text-center mb-4" style="color: #4379F2; font-weight: 700;">Liste des Membres</h1>
+
+            @if (Model.Users == null || Model.Users.Count == 0)
+            {
+                <div class="alert alert-info text-center" style="font-size: 1.2rem; font-weight: 600;">
+                    <i class="bi bi-info-circle" style="margin-right: 8px;"></i>
+                    Aucun membre trouvé.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover shadow-sm">
+                        <thead style="background-color: #4E9F3D; color: #fff; text-align: center;">
+                            <tr>
+                                <th style="padding: 15px;">Nom d'utilisateur</th>
+                                <th>Email</th>
+                                <th>Numéro de téléphone</th>
+                                <th>Rôle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var member in Model.Users)
+                            {
+                                <tr style="text-align: center; background-color: #f9f9f9; transition: all 0.3s ease;">
+                                    <td style="padding: 15px; font-weight: 500;">
+                                        <i class="bi bi-person-circle" style="color: #4E9F3D; margin-right: 8px;"></i>
+                                        @member.Username
+                                    </td>
+                                    <td>@member.Email</td>
+                                    <td>@member.Phone</td>
+                                    <td>
+                                        @if (member.Role.Equals("Coach", StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            <span class="badge bg-success" style="font-size: 1rem;">Entraineur</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-primary" style="font-size: 1rem;">Membre</span>
+                                        }
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+
+        <style>
+            body {
+                background-color: #f5f7fa;
+            }
+
+            table tbody tr:hover {
+                background-color: #e8f5e9;
+                transform: scale(1.01);
+                cursor: pointer;
+            }
+
+            h1 {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
+        <div style="height: 80px"></div>
+    </main>
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>MyFitnessApp</h5>
+                    <p>Obtenez les outils pour réussir à perdre du poids et le maintenir.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">À propos de nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contactez-nous</h5>
+                    <p>Email : info@myfitnessapp.com</p>
+                    <p>Téléphone : +000 000 000 000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

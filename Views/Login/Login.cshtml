@@ -1,0 +1,45 @@
+﻿@model Projet.Models.PageModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; background-color: #f5f7fa;">
+    <div class="card" style="width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);">
+        <div class="card-header text-center bg-light" style="border-radius: 20px 20px 0 0; background-color: #F8F9FA;">
+            <!-- Logo et Nom du site -->
+            <img src="~/images/icone1.png" alt="Logo" style="height: 50px; margin-bottom: 10px;">
+            <h2 class="fw-bold" style="color: #4379F2;">MyFitnessApp</h2>
+            <p style="font-weight: 500; color: #888;">Connectez-vous à votre compte</p>
+        </div>
+        <div class="card-body" style="padding: 40px;">
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger text-center" style="font-size: 1rem; font-weight: 600;">@ViewBag.ErrorMessage</div>
+            }
+
+            <form method="post" action="/Login/Login">
+                <div class="mb-4">
+                    <label for="username" class="form-label" style="font-weight: 600; color: #333;">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Entrez votre nom d'utilisateur" required style="font-size: 1.1rem; padding: 15px;" />
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label" style="font-weight: 600; color: #333;">Mot de passe :</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required style="font-size: 1.1rem; padding: 15px;" />
+                </div>
+                <button type="submit" class="btn btn-primary w-100" style="font-size: 1.2rem; padding: 18px 25px; background-color: #6EC207; border-color: #6EC207; transition: background-color 0.3s ease;">
+                    Connexion
+                </button>
+            </form>
+            <div class="text-center mt-4">
+                <a href="/SignUp/Index" class="btn btn-secondary w-100" style="font-size: 1.2rem; padding: 18px 25px; background-color: #FFFFFF;border-color: #FFEB00;; color: #FFEB00;; font-weight: 600; transition: background-color 0.2s ease;">
+                    S'inscrire
+                </a>
+            </div>
+            <div class="text-center mt-3">
+                <a href="#" style="color: #6EC207; font-size: 1rem; font-weight: 600;">Mot de passe oublié ?</a>
+            </div>
+        </div>
+    </div>
+</div>
+

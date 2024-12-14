@@ -1,0 +1,87 @@
+﻿@model Projet.Models.NewPageModel
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Articles</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header", Model.User) <!-- Passez l'utilisateur actuel comme modèle -->
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <h1 class="text-center mb-4" style="color:#6EC207;">Articles</h1>
+            <a href="/HomeMember/Articles" class="btn btn-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%; padding: 0; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="/images/fast-forward.png" , style="block-size: 20px; font-size: 20px" />
+            </a>
+            <p class="mt-2 text-muted" style="color: #FFFFFF;font-size: 0.9rem;">Voir tout</p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                @foreach (var article in Model.Articles)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@article.ImageUrl" class="card-img-top" alt="Image de @article.Title" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #4379F2;">@article.Title</h5>
+                                <p class="card-text text-muted">Par @article.Author</p>
+                                <p class="card-text">@article.Content.Substring(0, Math.Min(article.Content.Length, 100))...</p>
+                                <a href="/HomeMember/Details/@article.Id" class="btn btn-secondary">Lire la suite</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h1 class="text-center mb-4" style="color: #6EC207;">Exercices</h1>
+            <a href="/Exercices/Index" class="btn btn-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%; padding: 0; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="/images/fast-forward.png" , style="block-size: 20px; font-size: 20px" />
+            </a>
+            <p class="mt-2 text-muted" style="color: #FFFFFF;font-size: 0.9rem;">Voir tout</p>
+            <div>
+                @Html.Partial("_ExerciseList", Model.Exercices)
+            </div>
+        </div>
+
+        <div style="height: 80px"></div>
+
+    </main>
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>MyFitnessApp</h5>
+                    <p>Obtenez les outils pour réussir à perdre du poids et le maintenir.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">À propos de nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contactez-nous</h5>
+                    <p>Email : info@myfitnessapp.com</p>
+                    <p>Téléphone : +000 000 000 000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

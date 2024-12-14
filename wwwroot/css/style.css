@@ -1,0 +1,74 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    color: #rgb(110, 194, 7);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lead, .lead ul, .lead p {
+    font-size: 1.2rem;
+    color: #333; /* Texte plus foncé */
+    font-weight: 600; /* Texte en semi-gras */
+}
+
+/* Bouton principal */
+.btn-primary {
+    background-color: rgb(110, 194, 7);
+    color: white;
+    border: none;
+    font-size: 1.3rem; /* Plus grand */
+    padding: 15px 25px; /* Plus de padding */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .btn-primary:hover {
+        color: rgb(110, 194, 7);
+        background-color: #FFFFFF;
+        border: 2px solid rgb(110, 194, 7);
+        transform: scale(1.05); /* Zoom au survol */
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+/* Bouton secondaire */
+.btn-secondary {
+    background-color: #FFFFFF;
+    border: 2px solid #FFEB00;
+    color: #FFEB00;
+    font-size: 1.3rem; /* Plus grand */
+    padding: 15px 25px; /* Plus de padding */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .btn-secondary:hover {
+        background-color: #FFEB00;
+        color: white;
+        transform: scale(1.05); /* Zoom au survol */
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        border-color: #FFEB00;
+    }
+
+footer {
+    background: #f8f9fa;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    footer h5 {
+        color: rgb(110, 194, 7);
+    }
+
+    footer ul li a {
+        color: rgb(110, 194, 7);
+        text-decoration: none;
+    }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }

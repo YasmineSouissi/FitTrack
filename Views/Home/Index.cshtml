@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyFitnessApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/BtnStyles.css" asp-append-version="true" />
+
+    <style>
+        /* Bannière avec image */
+        .banner {
+            background-image: url('/images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px; /* Ajustez cette hauteur selon vos besoins */
+            position: relative;
+        }
+
+           
+
+            .banner .container {
+                position: relative;
+                z-index: 1;
+            }
+
+            .banner h2, .banner p {
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="~/images/icone1.png" alt="Logo" style="height: 30px; margin-right: 10px;" />
+                    <span class="fw-bold" style="color: #117554;">MyFitnessApp</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/SignUp/Index">S'inscrire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Login/Login">Se connecter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Bannière avec image -->
+        <div class="banner">
+            <div class="overlay"></div>
+            <div class="container position-relative">
+                
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="text-center">
+            <h1 class="display-5 fw-bold" style="color: rgb(110, 194, 7);">
+                Restez en forme avec MyFitnessApp
+            </h1>
+        </div>
+
+        <div class="row align-items-center my-5">
+            <div class="col-md-4">
+                <img src="~/images/sport (1).jpg" alt="Image fitness" class="img-fluid rounded float-start" style="max-height: 200px;" />
+            </div>
+            <div class="col-md-8">
+                <p class="lead">
+                    Perdre du poids n'est pas facile - nous le savons. Mais avec <strong>MyFitnessApp</strong>, vous aurez les outils
+                    nécessaires pour perdre du poids avec succès - et le maintenir. Le meilleur ? Vous pouvez vous inscrire gratuitement, sans engagement.
+                </p>
+                <p class="lead">
+                    Chez <strong>MyFitnessApp</strong>, notre priorité est de vous permettre d'enregistrer vos repas de manière rapide et simple.
+                    Plus c'est facile, plus vous êtes susceptible de rester sur la bonne voie et d'atteindre vos objectifs.
+                </p>
+            </div>
+        </div>
+
+        <div class="row align-items-center my-5">
+            <div class="col-md-8">
+                <h3 class="lead">Avec un compte GRATUIT, vous obtenez :</h3>
+                <ul class="lead">
+                    <li>Le journal alimentaire le plus facile à utiliser sur le web.</li>
+                    <li>Une base de données alimentaire avec de nombreux éléments.</li>
+                    <li>Votre propre base de données alimentaire personnelle.</li>
+                    <li>Un soutien et une motivation de personnes comme vous.</li>
+                    <li>Un profil alimentaire personnalisé.</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <img src="~/images/sport (2).jpg" alt="Image fitness" class="img-fluid rounded float-start" style="max-height: 200px;" />
+            </div>
+        </div>
+
+        <div class="row align-items-center my-5">
+            <div class="col-md-4">
+                <img src="~/images/sport (3).jpg" alt="Image fitness" class="img-fluid rounded float-start" style="max-height: 200px;" />
+            </div>
+            <div class="col-md-8">
+                <h3 class="lead">Comment ça fonctionne ?</h3>
+                <p class="lead">Notre système apprend de vous ! Il se souvient de ce que vous avez mangé et vous permet d'ajouter facilement ces aliments à votre journal. Plus vous suivez vos repas, plus cela devient simple !</p>
+                <h4 class="lead">Ne tardez pas !</h4>
+                <p class="lead">Commencez à perdre du poids de manière saine - gratuitement !</p>
+            </div>
+        </div>
+
+        <div class="text-center my-4">
+            <a href="/SignUp/Index" class="btn btn-primary btn-lg me-3">Rejoignez-nous</a>
+            <a href="/Login/Login" class="btn btn-secondary btn-lg">Se connecter</a>
+        </div>
+    </main>
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>MyFitnessApp</h5>
+                    <p>Obtenez les outils nécessaires pour perdre du poids avec succès - et le maintenir.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contactez-nous</h5>
+                    <p>Email : info@myfitnessapp.com</p>
+                    <p>Téléphone : +000 000 000 000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

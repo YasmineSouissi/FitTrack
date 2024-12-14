@@ -1,0 +1,48 @@
+﻿/* Style pour le footer */
+footer {
+    background-color: #f8f9fa;
+    border-top: 2px solid #ddd;
+}
+
+    footer h5 {
+        font-weight: bold;
+        color: #117554;
+    }
+
+    footer p,
+    footer ul li a {
+        color: #6c757d;
+    }
+
+        footer ul li a:hover {
+            color: #117554;
+        }
+
+/* Style pour les boutons */
+.btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #117554;
+    border-color: #117554;
+}
+
+    .btn-primary:hover {
+        background-color: #FFFFFF;
+        border-color: #117554;
+        transform: scale(1.05);
+    }
+
+.btn-secondary {
+    background-color: #FFFFFF;
+    border-color: #FFEB00;
+}
+
+    .btn-secondary:hover {
+        background-color: #FFEB00;
+        border-color: #FFEB00;
+        color: #FFFFFF
+        transform: scale(1.05);
+    }
+

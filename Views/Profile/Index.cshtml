@@ -1,0 +1,89 @@
+﻿@model Projet.Models.User
+@{
+    ViewData["Title"] = "Profil de l'utilisateur";
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header", Model) <!-- Passez l'utilisateur actuel comme modèle -->
+    </header>
+
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="@Model.ProfileImage" alt="Photo de profil" class="img-fluid rounded-circle" style="max-height: 200px;" />
+                <h2>@Model.Username</h2>
+                <p>@Model.Email</p>
+            </div>
+            <div class="col-md-8">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Nom complet</th>
+                        <td>@Model.Username</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>@Model.Email</td>
+                    </tr>
+                    <tr>
+                        <th>Genre</th>
+                        <td>@Model.Gender</td>
+                    </tr>
+                    <tr>
+                        <th>Poids actuel</th>
+                        <td>@Model.CurrentWeight kg</td>
+                    </tr>
+                    <tr>
+                        <th>Poids objectif</th>
+                        <td>@Model.GoalWeight kg</td>
+                    </tr>
+                    <tr>
+                        <th>Taille</th>
+                        <td>@Model.Height cm</td>
+                    </tr>
+                    <tr>
+                        <th>Objectif calorique quotidien</th>
+                        <td>@Model.DailyCaloriesGoal kcal</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>MyFitnessApp</h5>
+                    <p>Obtenez les outils pour réussir à perdre du poids et le maintenir.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">À propos de nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contactez-nous</h5>
+                    <p>Email : info@myfitnessapp.com</p>
+                    <p>Téléphone : +000 000 000 000</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
